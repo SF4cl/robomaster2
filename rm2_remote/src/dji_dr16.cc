@@ -25,7 +25,7 @@ static float Map(float value, float from_min, float from_max, float to_min, floa
 }
 
 Dr16Node::Dr16Node(const rclcpp::NodeOptions &options) : rclcpp::Node("dji_dr16", options) {
-  this->declare_parameter<std::string>("serial_port", "/dev/ttyTHS0");
+  this->declare_parameter<std::string>("serial_port", "/dev/ttyUSB0");
   this->get_parameter<std::string>("serial_port", this->param_serial_port_);
 
   RCLCPP_INFO(this->get_logger(), "serial_port: %s", this->param_serial_port_.c_str());
